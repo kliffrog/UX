@@ -1,0 +1,466 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<!--
+    Author:    Keith Laws
+    Page Name: Contact page
+    Date: 	   7/31/2016
+-->
+<html lang="en">
+<script type="text/javascript">
+
+	function toggle(submitform,buttonname) {
+	  var buttons=document.getElementsByTagName('button'),inputs=document.getElementsByTagName('input');
+	  // Disable all <buttons>
+	  for (i=0;i<buttons.length;i++) {
+		if (buttons.hasAttribute('disabled')) {
+            buttons.removeAttribute('disabled');
+        } else {
+            buttons.setAttribute('disabled', 'disabled');
+        }
+	  }
+	  submitform.button.value=buttonname;
+	  submitform.submit();
+	  return false;
+	}
+	function DisableButtons(submitform,buttonname) {
+	  var buttons=document.getElementsByTagName('button'),inputs=document.getElementsByTagName('input');
+	  // Disable all <buttons>
+	  for (i=0;i<buttons.length;i++) {
+		buttons[i].disabled=true;
+	  }
+	  // Disable all inputs with type= submit, button, or image
+	  for (i=0;i<inputs.length;i++) {
+		if (inputs[i].type=="submit" || inputs[i].type=="button" || inputs[i].type=="image") {
+		  inputs[i].disabled=true;
+		}
+	  }
+	  submitform.button.value=buttonname;
+	  submitform.submit();
+	  return false;
+	}
+	function EnableButtons(submitform,buttonname) {
+	  var buttons=document.getElementsByTagName('button'),inputs=document.getElementsByTagName('input');
+	  // Disable all <buttons>
+	  for (i=0;i<buttons.length;i++) {
+		buttons[i].disabled=false;
+	  }
+	  // Disable all inputs with type= submit, button, or image
+	  for (i=0;i<inputs.length;i++) {
+		if (inputs[i].type=="submit" || inputs[i].type=="button" || inputs[i].type=="image") {
+		  inputs[i].disabled=false;
+		}
+	  }
+	  submitform.button.value=buttonname;
+	  submitform.submit();
+	  return false;
+	}
+	</script>
+	<head>
+		<title>UX :: Contact</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="styles.css" media="screen">
+		<link rel="stylesheet" href="print.css" media="print">
+		<link rel="shortcut icon" href="favicon.ico" ><link rel="icon" href="graphics/animated_favicon.gif" type="image/gif" >
+        
+		<style> /* EMBEDDED STYLE SHEET */
+			input[type="submit"], input[type="reset"] {
+				display: inline; }
+			legend { background-color: #000000;
+					 color: #FFFFFF; }
+			fieldset#yourinfo { float: none;
+								width: auto; }
+			fieldset#yourinfo label { text-align: left;
+									  width: 25%; }					
+			.canwecall { font-size: 60%;}
+			figure img { float: right; 
+						 width: 30%;
+						 height:22%; }
+            
+			fieldset.emailyou {
+                border-width: 0;
+                display: block;
+                margin-top: 10px;
+                padding: 0 0 5px 10px;
+                }
+
+            fieldset.emailyou label {
+                display: inline;
+                float: none;
+                font-size:80%; 
+                padding: 0; 
+                }
+             
+            fieldset.emailyou input {
+                display: inline;
+                float: none;
+                margin-right: 2em;
+                padding: 0;
+                width: auto;
+                }
+			textarea { display: block;
+					   margin-left: 25%;
+					   width: 65%; }
+
+		</style>
+		<!-- [if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+			</script>
+        <! [endif] -->
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<h1>UX :: Contact</h1>
+			</header> 
+			<nav>
+				<ul>
+					<li><a href="final1.html">Home</a></li>
+					<li><a href="final2.html">Methodologies</a></li>
+					<li><a href="final3.html">Metrics</a></li>
+					<li><a href="final4.html">Credits</a></li>
+					<li><a href="final5.html">Contact</a></li>
+				</ul> 
+			</nav>
+			<aside>  <!-- RIGHT COLUMN -->
+				
+				<h4>About</h4>
+				<p> The purpose of this website is to present a brief overview of the extensive subject of
+					user experience (UX).</p>
+				<h4>Author</h4>
+				<p> Keith is a student at JCCC majoring in computer science. 
+					He hopes to obtain the knowledge needed to succeed in the
+					computer information industry.
+				</p>
+			</aside>
+			<section>
+				<h2>Contact Us Today!</h2>
+				<h4>Required fields are marked with an asterisk *</h4>
+				<figure>
+					<img src="graphics/yooshopper.png" alt="Sign up here">
+				</figure>
+				<form method="post" action="placeholder.php">
+					<fieldset id="yourinfo">
+						<legend>&nbsp;Your Info&nbsp;</legend>
+						<label for="myFName">*First Name: </label>
+						<input type="text" placeholder=" First Name" name="myFName" id="myFName" required="required"><br>
+						<label for="myLName">*Last Name: </label>
+						<input type="text" placeholder=" Last Name" name="myLName" id="myLName" required="required"><br>
+						<label for="myEmail">*E-mail: </label>
+						<input type="email" placeholder=" user@domain.com" size="35" name="myEmail" id="myEmail" required="required">
+						
+						<fieldset class="emailyou">
+							<label>Is this your work email? </label>
+							<label for="wkemailyes" id="workemail">Yes</label>
+							<input type="checkbox" id="wkemailyes" name="wkemailyes" value="no">
+							<label for="wkemailno" id="workemail">No</label>
+							<input type="checkbox" id="wkemailno" name="wkemailno" value="no">
+						</fieldset>
+						<label for="myPhone">Phone: </label>
+						<input type="tel" placeholder=" (optional)" maxlength="12" name="myPhone" id="myPhone">
+						<fieldset class="emailyou">
+							<label for="cancall" id="canwecall">Can we call after midnight? </label>
+							<input type="radio" id="cancall" name="cancall" value="no"><br>
+						</fieldset>
+						<label for="myIndustry">Industry:</label>
+						<select size="1" id="myIndustry" name="myIndustry">
+							<option value="">Please select one</option>
+							<option value="100">Academic</option>
+							<option value="101">Accounting</option>
+							<option value="102">Advertising / PR</option>
+							<option value="103">Aerospace / Defence</option>
+							<option value="104">Airlines / Cruiselines</option>
+							<option value="105">Automotive</option>
+							<option value="106">Banking</option>
+							<option value="107">Chemical</option>
+							<option value="108">Construction / Engineering</option>
+							<option value="109">Consulting</option>
+							<option value="110">Consumer Goods</option>
+							<option value="111">Energy</option>
+							<option value="112">Entertainment</option>
+							<option value="113">Financial Services</option>
+							<option value="114">Government</option>
+							<option value="115">Healthcare / Pharmaceuticals</option>
+							<option value="116">HR / Recruitment</option>
+							<option value="117">Insurance</option>
+							<option value="118">IT / Technology</option>
+							<option value="119">Legal</option>
+							<option value="120">Manufacturing</option>
+							<option value="121">Media</option>
+							<option value="122">Mining</option>
+							<option value="123">Not-for-Profit</option>
+							<option value="124">Other</option>
+							<option value="125">Public Library</option>
+							<option value="126">Real Estate</option>
+							<option value="127">Retail / Wholesale</option>
+							<option value="128">Telecommunications</option>
+							<option value="129">Transportation &amp; Logistics</option>
+							<option value="130">Travel / Tourism</option>
+							<option value="131">Utilities</option>
+						</select><br><br>
+						<label for="mydate">Hire Date: </label>
+						<input type="date" name="mydate" id="mydate"><br>
+						<label for="myTitle">Job Title: </label>
+						<input type="text" placeholder=" (optional)"  name="myTitle" id="myTitle"><br>
+						<label for="myComments">*Comments: </label>
+						<textarea name="myComments"  placeholder=" thoughts/opinions"  id="myComments" rows="2" cols="30" required="required"></textarea><br>
+					</fieldset>
+						<!--onKeyPress="return NumDecOnly(event,this);"-->
+						<!--<button name="memberlogin" accesskey="l" id="memberlogin" onClick="return DisableButtons(document.mainform,'mySubmit')";" type="button" ><span>L</span>og In</button>-->
+						<input type="submit" value="Submit" name="mySubmit" id="mySubmit">
+						<input type="reset" value="Reset" name="myReset" id="myReset"  onclick="return toggle(document.mainform,'cancall')">
+						<!--onClick="return EnableButtons(document.mainform,'myReset')";">-->
+				</form>
+			</section>
+			<footer>
+				<nav>
+					<p class="fragtop"><a href="#top">Top</a></p>
+					<ul>
+						<li><a href="final1.html">Home</a></li>
+						<li><a href="final2.html">Methodologies</a></li>
+						<li><a href="final3.html">Metrics</a></li>
+						<li><a href="final4.html">Credits</a></li>
+						<li><a href="final5.html">Contact</a></li>
+					</ul>
+				</nav>
+				<br><br>
+				<span class="footlink">Copyright &copy; 2016 Kliffrog, Inc.</span><br>
+				<a class="footlink" href="mailto:klaws1@stumail.jccc.edu">
+				klaws1@stumail.jccc.edu</a><br><br>
+			</footer>
+		</div>
+	</body>
+=======
+<!DOCTYPE html>
+<!--
+    Author:    Keith Laws
+    Page Name: Contact page
+    Date: 	   7/31/2016
+-->
+<html lang="en">
+<script type="text/javascript">
+
+	function toggle(submitform,buttonname) {
+	  var buttons=document.getElementsByTagName('button'),inputs=document.getElementsByTagName('input');
+	  // Disable all <buttons>
+	  for (i=0;i<buttons.length;i++) {
+		if (buttons.hasAttribute('disabled')) {
+            buttons.removeAttribute('disabled');
+        } else {
+            buttons.setAttribute('disabled', 'disabled');
+        }
+	  }
+	  submitform.button.value=buttonname;
+	  submitform.submit();
+	  return false;
+	}
+	function DisableButtons(submitform,buttonname) {
+	  var buttons=document.getElementsByTagName('button'),inputs=document.getElementsByTagName('input');
+	  // Disable all <buttons>
+	  for (i=0;i<buttons.length;i++) {
+		buttons[i].disabled=true;
+	  }
+	  // Disable all inputs with type= submit, button, or image
+	  for (i=0;i<inputs.length;i++) {
+		if (inputs[i].type=="submit" || inputs[i].type=="button" || inputs[i].type=="image") {
+		  inputs[i].disabled=true;
+		}
+	  }
+	  submitform.button.value=buttonname;
+	  submitform.submit();
+	  return false;
+	}
+	function EnableButtons(submitform,buttonname) {
+	  var buttons=document.getElementsByTagName('button'),inputs=document.getElementsByTagName('input');
+	  // Disable all <buttons>
+	  for (i=0;i<buttons.length;i++) {
+		buttons[i].disabled=false;
+	  }
+	  // Disable all inputs with type= submit, button, or image
+	  for (i=0;i<inputs.length;i++) {
+		if (inputs[i].type=="submit" || inputs[i].type=="button" || inputs[i].type=="image") {
+		  inputs[i].disabled=false;
+		}
+	  }
+	  submitform.button.value=buttonname;
+	  submitform.submit();
+	  return false;
+	}
+	</script>
+	<head>
+		<title>UX :: Contact</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="styles.css" media="screen">
+		<link rel="stylesheet" href="print.css" media="print">
+		<link rel="shortcut icon" href="favicon.ico" ><link rel="icon" href="graphics/animated_favicon.gif" type="image/gif" >
+        
+		<style> /* EMBEDDED STYLE SHEET */
+			input[type="submit"], input[type="reset"] {
+				display: inline; }
+			legend { background-color: #000000;
+					 color: #FFFFFF; }
+			fieldset#yourinfo { float: none;
+								width: auto; }
+			fieldset#yourinfo label { text-align: left;
+									  width: 25%; }					
+			.canwecall { font-size: 60%;}
+			figure img { float: right; 
+						 width: 30%;
+						 height:22%; }
+            
+			fieldset.emailyou {
+                border-width: 0;
+                display: block;
+                margin-top: 10px;
+                padding: 0 0 5px 10px;
+                }
+
+            fieldset.emailyou label {
+                display: inline;
+                float: none;
+                font-size:80%; 
+                padding: 0; 
+                }
+             
+            fieldset.emailyou input {
+                display: inline;
+                float: none;
+                margin-right: 2em;
+                padding: 0;
+                width: auto;
+                }
+			textarea { display: block;
+					   margin-left: 25%;
+					   width: 65%; }
+
+		</style>
+		<!-- [if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+			</script>
+        <! [endif] -->
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<h1>UX :: Contact</h1>
+			</header> 
+			<nav>
+				<ul>
+					<li><a href="final1.html">Home</a></li>
+					<li><a href="final2.html">Methodologies</a></li>
+					<li><a href="final3.html">Metrics</a></li>
+					<li><a href="final4.html">Credits</a></li>
+					<li><a href="final5.html">Contact</a></li>
+				</ul> 
+			</nav>
+			<aside>  <!-- RIGHT COLUMN -->
+				
+				<h4>About</h4>
+				<p> The purpose of this website is to present a brief overview of the extensive subject of
+					user experience (UX).</p>
+				<h4>Author</h4>
+				<p> Keith is a student at JCCC majoring in computer science. 
+					He hopes to obtain the knowledge needed to succeed in the
+					computer information industry.
+				</p>
+			</aside>
+			<section>
+				<h2>Contact Us Today!</h2>
+				<h4>Required fields are marked with an asterisk *</h4>
+				<figure>
+					<img src="graphics/yooshopper.png" alt="Sign up here">
+				</figure>
+				<form method="post" action="placeholder.php">
+					<fieldset id="yourinfo">
+						<legend>&nbsp;Your Info&nbsp;</legend>
+						<label for="myFName">*First Name: </label>
+						<input type="text" placeholder=" First Name" name="myFName" id="myFName" required="required"><br>
+						<label for="myLName">*Last Name: </label>
+						<input type="text" placeholder=" Last Name" name="myLName" id="myLName" required="required"><br>
+						<label for="myEmail">*E-mail: </label>
+						<input type="email" placeholder=" user@domain.com" size="35" name="myEmail" id="myEmail" required="required">
+						
+						<fieldset class="emailyou">
+							<label>Is this your work email? </label>
+							<label for="wkemailyes" id="workemail">Yes</label>
+							<input type="checkbox" id="wkemailyes" name="wkemailyes" value="no">
+							<label for="wkemailno" id="workemail">No</label>
+							<input type="checkbox" id="wkemailno" name="wkemailno" value="no">
+						</fieldset>
+						<label for="myPhone">Phone: </label>
+						<input type="tel" placeholder=" (optional)" maxlength="12" name="myPhone" id="myPhone">
+						<fieldset class="emailyou">
+							<label for="cancall" id="canwecall">Can we call after midnight? </label>
+							<input type="radio" id="cancall" name="cancall" value="no"><br>
+						</fieldset>
+						<label for="myIndustry">Industry:</label>
+						<select size="1" id="myIndustry" name="myIndustry">
+							<option value="">Please select one</option>
+							<option value="100">Academic</option>
+							<option value="101">Accounting</option>
+							<option value="102">Advertising / PR</option>
+							<option value="103">Aerospace / Defence</option>
+							<option value="104">Airlines / Cruiselines</option>
+							<option value="105">Automotive</option>
+							<option value="106">Banking</option>
+							<option value="107">Chemical</option>
+							<option value="108">Construction / Engineering</option>
+							<option value="109">Consulting</option>
+							<option value="110">Consumer Goods</option>
+							<option value="111">Energy</option>
+							<option value="112">Entertainment</option>
+							<option value="113">Financial Services</option>
+							<option value="114">Government</option>
+							<option value="115">Healthcare / Pharmaceuticals</option>
+							<option value="116">HR / Recruitment</option>
+							<option value="117">Insurance</option>
+							<option value="118">IT / Technology</option>
+							<option value="119">Legal</option>
+							<option value="120">Manufacturing</option>
+							<option value="121">Media</option>
+							<option value="122">Mining</option>
+							<option value="123">Not-for-Profit</option>
+							<option value="124">Other</option>
+							<option value="125">Public Library</option>
+							<option value="126">Real Estate</option>
+							<option value="127">Retail / Wholesale</option>
+							<option value="128">Telecommunications</option>
+							<option value="129">Transportation &amp; Logistics</option>
+							<option value="130">Travel / Tourism</option>
+							<option value="131">Utilities</option>
+						</select><br><br>
+						<label for="mydate">Hire Date: </label>
+						<input type="date" name="mydate" id="mydate"><br>
+						<label for="myTitle">Job Title: </label>
+						<input type="text" placeholder=" (optional)"  name="myTitle" id="myTitle"><br>
+						<label for="myComments">*Comments: </label>
+						<textarea name="myComments"  placeholder=" thoughts/opinions"  id="myComments" rows="2" cols="30" required="required"></textarea><br>
+					</fieldset>
+						<!--onKeyPress="return NumDecOnly(event,this);"-->
+						<!--<button name="memberlogin" accesskey="l" id="memberlogin" onClick="return DisableButtons(document.mainform,'mySubmit')";" type="button" ><span>L</span>og In</button>-->
+						<input type="submit" value="Submit" name="mySubmit" id="mySubmit">
+						<input type="reset" value="Reset" name="myReset" id="myReset"  onclick="return toggle(document.mainform,'cancall')">
+						<!--onClick="return EnableButtons(document.mainform,'myReset')";">-->
+				</form>
+			</section>
+			<footer>
+				<nav>
+					<p class="fragtop"><a href="#top">Top</a></p>
+					<ul>
+						<li><a href="final1.html">Home</a></li>
+						<li><a href="final2.html">Methodologies</a></li>
+						<li><a href="final3.html">Metrics</a></li>
+						<li><a href="final4.html">Credits</a></li>
+						<li><a href="final5.html">Contact</a></li>
+					</ul>
+				</nav>
+				<br><br>
+				<span class="footlink">Copyright &copy; 2016 Kliffrog, Inc.</span><br>
+				<a class="footlink" href="mailto:klaws1@stumail.jccc.edu">
+				klaws1@stumail.jccc.edu</a><br><br>
+			</footer>
+		</div>
+	</body>
+>>>>>>> origin/master
+</html>
